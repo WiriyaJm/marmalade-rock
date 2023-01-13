@@ -1,18 +1,17 @@
 import { useState } from 'react';
-import { loginFields } from "../constants/formFields";
+import { forgotFields } from "../constants/formFields";
 import FormAction from "./FormAction";
-import FormExtra from "./FormExtra";
 import Input from "./Input";
 
-const fields=loginFields;
+const fields=forgotFields;
 let fieldsState = {};
 fields.forEach(field=>fieldsState[field.id]='');
 
-export default function Login(){
-    const [loginState,setLoginState]=useState(fieldsState);
+export default function ForgotPassword(){
+    const [forgotState,setForgotState]=useState(fieldsState);
 
     const handleChange=(e)=>{
-        setLoginState({...loginState,[e.target.id]:e.target.value})
+        setForgotState({...forgotState,[e.target.id]:e.target.value})
     }
 
     const handleSubmit=(e)=>{
@@ -20,7 +19,7 @@ export default function Login(){
         authenticateUser();
     }
 
-    //Handle Login API Integration here
+    //Handle Forgotpassword API Integration here
     const authenticateUser = () =>{
 
     }
@@ -33,7 +32,7 @@ export default function Login(){
                             <Input
                                 key={field.id}
                                 handleChange={handleChange}
-                                value={loginState[field.id]}
+                                value={forgotState[field.id]}
                                 labelText={field.labelText}
                                 labelFor={field.labelFor}
                                 id={field.id}
@@ -47,11 +46,7 @@ export default function Login(){
                 }
             </div>
 
-            <FormExtra
-                linkName="Forgot Password?"
-                linkUrl="/forgotpassword"
-            />
-            <FormAction handleSubmit={handleSubmit} text="Login"/>
+            <FormAction handleSubmit={handleSubmit} text="Send instructions"/>
 
         </form>
     )

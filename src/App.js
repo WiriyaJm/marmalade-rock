@@ -1,4 +1,3 @@
-//import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter,
@@ -7,6 +6,7 @@ import {
 } from "react-router-dom";
 import SignupPage from './pages/Signup';
 import LoginPage from './pages/Login';
+import ForgotPasswordPage from './pages/ForgotPassword';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Routes>
               <Route path="/" element={<LoginPage/>} />
               <Route path="/signup" element={<SignupPage/>} />
+              <Route path="/forgotpassword" element={<ForgotPasswordPage/>} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -1,4 +1,9 @@
-export default function FormExtra(){
+import {Link} from 'react-router-dom';
+
+export default function FormExtra({
+  linkName,
+  linkUrl="#"
+}){
     return(
         <div className="flex items-center justify-between ">
         <div className="flex items-center">
@@ -14,9 +19,9 @@ export default function FormExtra(){
         </div>
 
         <div className="text-sm">
-          <a href="#" className="font-medium text-purple-600 hover:text-purple-500">
-            Forgot your password?
-          </a>
+          <Link to={linkUrl} className="font-medium text-purple-600 hover:text-purple-500">
+                {linkName}
+            </Link>
         </div>
       </div>
 
