@@ -1,0 +1,29 @@
+import {Link} from 'react-router-dom';
+import logo from '../logo.svg';
+
+export default function Header({
+    heading,
+    paragraph,
+    linkName,
+    linkUrl="#"
+}){
+    return(
+        <div className="mb-10">
+            <div className="flex justify-center">
+                <img 
+                    alt=""
+                    className="h-32 w-32"
+                    src={logo}/>
+            </div>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                {heading}
+            </h2>
+            <p className="mt-4 text-center text-sm text-gray-600">
+            {paragraph} {' '}
+            <Link to={linkUrl} className="font-medium text-amber-600 hover:text-amber-500">
+                {linkName}
+            </Link>
+            </p>
+        </div>
+    )
+}
